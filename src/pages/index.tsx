@@ -3,6 +3,7 @@ import Head from "next/head";
 import { HomeView } from "../views";
 
 const Home: NextPage = (props) => {
+ 
   return (
     <div>
       <Head>
@@ -12,7 +13,8 @@ const Home: NextPage = (props) => {
           content="Solana Scaffold"
         />
       </Head>
-      <HomeView />
+      <HomeView/>
+      
     </div>
   );
 };
