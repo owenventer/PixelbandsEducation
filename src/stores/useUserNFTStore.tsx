@@ -11,6 +11,7 @@ interface UserNFTStore extends State {
 const useUserNFTStore = create<UserNFTStore>((set, _get) => ({
   NFTList: "",
   getUserNFT: async (publicKey, connection) => {
+    console.log(publicKey);
     let NFTList = "";
     try {
         const filters:GetProgramAccountsFilter[] = [
@@ -20,7 +21,7 @@ const useUserNFTStore = create<UserNFTStore>((set, _get) => ({
           {
             memcmp: {
               offset: 32,     //location of our query in the account (bytes)
-              bytes: ""+publicKey.toBase58,  //our search criteria, a base58 encoded string
+              bytes: ""+publicKey,  //our search criteria, a base58 encoded string
             }            
           }
        ];
